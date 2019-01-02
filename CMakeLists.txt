@@ -1,4 +1,4 @@
-# Copyright (c) 2012-2018 LG Electronics, Inc.
+# Copyright (c) 2012-2019 LG Electronics, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -62,3 +62,6 @@ add_subdirectory(nyx-cmd-modules)
 
 webos_build_configured_file(files/launch/nyx-utils.conf SYSCONFDIR init)
 webos_build_configured_file(files/launch/nyx-utils SYSCONFDIR event.d)
+
+# install systemd service to /etc/systemd/system
+webos_build_configured_file(files/launch/nyx-utils.service SYSCONFDIR systemd/system)

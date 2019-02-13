@@ -1,4 +1,4 @@
-// Copyright (c) 2016-2018 LG Electronics, Inc.
+// Copyright (c) 2016-2019 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -95,6 +95,7 @@ int NyxCmdTouchPanelGetEvent::Execute(const char *deviceId, int argc,
 	nyx_device_handle_t device = NULL;
 	nyx_error_t error = NYX_ERROR_NONE;
 	int touchPanelFD;
+	int poll_ret_val = -1;
 
 	error = nyx_init();
 
@@ -112,16 +113,20 @@ int NyxCmdTouchPanelGetEvent::Execute(const char *deviceId, int argc,
 				ufds[0].fd = touchPanelFD;
 				ufds[0].events = POLLIN;
 				ufds[0].revents = 0;
-				cout << "Touch the W2 screen to get X,Y coordinates or Press Ctrl+C to exit" <<
+				cout << "Touch the screen to get X,Y coordinates or Press Ctrl+C to exit" <<
 				     endl;
 
 				while (1)
 				{
-					poll(ufds, 1, -1);
+					poll_ret_val = poll(ufds, 1, -1);
 
-					if (ufds[0].revents && POLLIN)
+					if ((poll_ret_val != -1) && ufds[0].revents && POLLIN)
 					{
 						readTouchEventData(device);
+					}
+					else
+					{
+						cerr << "poll system call error" << endl;
 					}
 				}
 

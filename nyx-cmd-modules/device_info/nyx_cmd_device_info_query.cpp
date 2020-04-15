@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2018 LG Electronics, Inc.
+// Copyright (c) 2012-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -87,6 +87,8 @@ void NyxCmdDeviceInfoQuery::initCommandMap(nyx_device_type_t &devType,
 	                                       "Return WiFi MAC address");
 	commandMap["wired_addr"] = commandUsage(NYX_DEVICE_INFO_WIRED_ADDR,
 	                                        "Return Wired MAC address");
+	commandMap["device_id"] = commandUsage(NYX_DEVICE_INFO_DEVICE_ID,
+	                                        "Return Unique Device ID");
 }
 
 nyx_error_t NyxCmdDeviceInfoQuery::nyxQuery(nyx_device_handle_t device,

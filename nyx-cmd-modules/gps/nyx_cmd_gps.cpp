@@ -17,6 +17,7 @@
 #include "nyx_cmd_gps.h"
 #include "nyx_cmd_gps_enable_mock.h"
 #include "nyx_cmd_gps_set_mock_latency.h"
+#include "nyx_cmd_gps_providers_query.h"
 
 #include <string>
 #include <sstream>
@@ -51,13 +52,17 @@ string NyxCmdGps::Description()
 // Implemented command names and their class initiations are added here.
 NyxCmdCommand *NyxCmdGps::getCommand(string commandName)
 {
-	if (commandName == "enablemock")
+	if (commandName == "enableMock")
 	{
 		return new NyxCmdGpsEnableMock();
 	}
-	else if (commandName == "setmocklatency")
+	else if (commandName == "setMockLatency")
 	{
 		return new NyxCmdGpsSetMockLatency();
+	}
+	else if (commandName == "queryProviders")
+	{
+		return new NyxCmdGpsProvidersQuery();
 	}
 
 	return NULL;

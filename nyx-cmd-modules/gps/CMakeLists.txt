@@ -15,6 +15,6 @@
 # SPDX-License-Identifier: Apache-2.0
 
 set(moduleName ${NYX_CMD_MODULE_PREFIX}Gps)
-add_library(${moduleName} SHARED nyx_cmd_gps.cpp nyx_cmd_gps_enable_mock.cpp nyx_cmd_gps_set_mock_latency.cpp)
+add_library(${moduleName} SHARED nyx_cmd_gps.cpp nyx_cmd_gps_enable_mock.cpp nyx_cmd_gps_set_mock_latency.cpp nyx_cmd_gps_providers_query.cpp)
 target_link_libraries(${moduleName} ${NYXLIB_LDFLAGS})
 nyx_cmd_install_library(${moduleName})

@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2018 LG Electronics, Inc.
+// Copyright (c) 2012-2020 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -42,6 +42,7 @@ struct commandUsage
 	{
 		nyx_device_info_type_t device_info_enum;
 		nyx_os_info_query_t os_info_enum;
+		nyx_gps_providers_query_t gps_providers_enum;
 	};
 
 	command_enum_t commandEnum;
@@ -58,6 +59,11 @@ struct commandUsage
 		: commandStr(str)
 	{
 		commandEnum.os_info_enum = cmd;
+	};
+	commandUsage(nyx_gps_providers_query_t cmd, const std::string &str)
+		: commandStr(str)
+	{
+		commandEnum.gps_providers_enum = cmd;
 	};
 };
 

@@ -57,7 +57,7 @@ int NyxCmdGpsEnableMock::Execute(const char *deviceId, int argc, char **argv)
 
 		if (error == NYX_ERROR_NONE)
 		{
-			error = nyx_device_open(NYX_DEVICE_GPS, "Mock" , &device);
+			error = nyx_device_open(NYX_DEVICE_GPS, deviceId, &device);
 
 			if (device != NULL)
 			{
@@ -65,11 +65,11 @@ int NyxCmdGpsEnableMock::Execute(const char *deviceId, int argc, char **argv)
 
 				if ((error == NYX_ERROR_NONE) && (mock == 1))
 				{
-					cout << "Gps mock is enable to " << mock << endl;
+					cout << "Gps mock is enabled "<< endl;
 				}
 				else if ((error == NYX_ERROR_NONE) && (mock == 0))
 				{
-					cout << "Gps mock is disable to " << mock << endl;
+					cout << "Gps mock is disabled "<< endl;
 				}
 				else
 				{

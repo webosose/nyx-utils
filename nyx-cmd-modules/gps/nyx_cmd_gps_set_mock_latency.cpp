@@ -57,7 +57,7 @@ int NyxCmdGpsSetMockLatency::Execute(const char *deviceId, int argc, char **argv
 
 		if (error == NYX_ERROR_NONE)
 		{
-			error = nyx_device_open(NYX_DEVICE_GPS, "Mock" , &device);
+			error = nyx_device_open(NYX_DEVICE_GPS, deviceId , &device);
 
 			if (device != NULL)
 			{

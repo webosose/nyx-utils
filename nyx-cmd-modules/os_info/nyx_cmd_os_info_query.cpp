@@ -73,6 +73,8 @@ void NyxCmdOSInfoQuery::initCommandMap(nyx_device_type_t &devType,
 	                              "Return webOS release info");
 	commandMap["webos_release_codename"] = commandUsage(
 	        NYX_OS_INFO_WEBOS_RELEASE_CODENAME, "Return webOS release codename");
+	commandMap["webos_release_platformcode"] = commandUsage(
+            NYX_OS_INFO_WEBOS_RELEASE_PLATFORMCODE, "Return webOS value to evaluate platform version");
 	commandMap["webos_manufacturing_version"] = commandUsage(
 	            NYX_OS_INFO_WEBOS_MANUFACTURING_VERSION, "Return webOS manufacturing version");
 	commandMap["encryption_key_type"] = commandUsage(

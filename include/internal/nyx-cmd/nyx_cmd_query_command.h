@@ -1,4 +1,4 @@
-// Copyright (c) 2013-2018 LG Electronics, Inc.
+// Copyright (c) 2013-2021 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -47,7 +47,7 @@ private:
 
 	std::map<std::string, commandUsage> commandMap;
 	nyx_device_type_t nyxDevType;
-	NyxCmdOutput *output;
+	NyxCmdOutput *output = nullptr;
 
 	/**
 	 * List all available query targets.

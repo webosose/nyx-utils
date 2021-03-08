@@ -1,4 +1,4 @@
-// Copyright (c) 2012-2018 LG Electronics, Inc.
+// Copyright (c) 2012-2021 LG Electronics, Inc.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -245,10 +245,16 @@ int main(int argc, char **argv)
 			}
 			else
 			{
-				cerr << error << endl;
+				if((error = dlerror()) != NULL)
+				{
+					cerr << error << endl;
+				}
 			}
 
-			dlclose(lib_handle);
+			if(dlclose(lib_handle) != 0)
+			{
+				cerr << "Error : Unable to close the handle" << endl;
+			}
 		}
 		else
 		{

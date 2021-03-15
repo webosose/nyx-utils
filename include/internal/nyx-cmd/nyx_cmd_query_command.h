@@ -46,7 +46,7 @@ private:
 	static const int RESOLVE_ARGS_EXECUTE_ALL_QUERIES = -25;
 
 	std::map<std::string, commandUsage> commandMap;
-	nyx_device_type_t nyxDevType;
+	nyx_device_type_t nyxDevType = NYX_DEVICE_GENERIC;
 	NyxCmdOutput *output = nullptr;
 
 	/**

@@ -74,7 +74,7 @@ void NyxCmdOSInfoQuery::initCommandMap(nyx_device_type_t &devType,
 	commandMap["webos_release_codename"] = commandUsage(
 	        NYX_OS_INFO_WEBOS_RELEASE_CODENAME, "Return webOS release codename");
 
-#ifdef NYX_OS_INFO_WEBOS_RELEASE_PLATFORMCODE
+#ifndef INCLUDE_COMMER_SIGNAGE
 	commandMap["webos_release_platformcode"] = commandUsage(
             NYX_OS_INFO_WEBOS_RELEASE_PLATFORMCODE, "Return webOS value to evaluate platform version");
 #endif
